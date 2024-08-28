@@ -1,0 +1,23 @@
+class HelloWorld {
+    public static String swap(String str,char ch,char ch2){
+        StringBuilder s=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==ch){
+                s.append(ch2);
+            }
+            else if(str.charAt(i)==ch2){
+                s.append(ch);
+            }
+            else{
+                s.append(str.charAt(i));
+            }
+        }
+        return s.toString();
+    }
+    public static void main(String[] args) {
+        String str="apples";
+        char ch='a';
+        char ch2='p';
+        System.out.println(swap(str,ch,ch2));
+    }
+}
