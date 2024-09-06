@@ -1,0 +1,38 @@
+Imagine you are part of a software development team at a tech company, and your manager has assigned you a task related to financial data analysis. The company's accounting system has just reported four key financial metrics for a project, denoted as a b c and d. However, there is a twist: some of these metrics might be negative indicating a loss. Your task is to identify and sum up all the negative metrics.
+
+If there are no negative values, the system should return 0. ensuring no incorrect financial interpretation. Your solution will help the finance team quickly assess any losses that need immediate attention,
+Objective: Write a program that takes four integers as input and outputs the sum of all negative integers. If there are no negative integers, the output should be 0.
+
+Example Test Case:
+
+Input:
+
+a=-3
+
+• b=7
+
+c = -1
+
+od=4
+
+Output:
+-4
+
+
+code:
+class Negativenumbers {
+    public static int negativenumbersAdd(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                sum += arr[i];
+            }
+        }
+        return sum == 0 ? 0 : sum; // or simply return sum;
+    }
+
+    public static void main(String... args) {
+        int[] arr = {-3, 7, -1, 4};
+        System.out.println(negativenumbersAdd(arr));
+    }
+}
