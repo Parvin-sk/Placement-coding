@@ -1,0 +1,62 @@
+Description:
+Write a Java program to find the length of the longest substring in a given string, where the string contains substrings separated by commas.
+Input:
+A string containing substrings separated by commas (e.g., "abc, de, fg,h")
+Output:
+The length of the longest substring
+Constraints:
+The input string may contain leading or trailing whitespace
+The input string may contain empty substrings (i.e., consecutive commas)
+Example:
+Input: "abc, de, fg,h"
+Output: 3 (because "abc" is the longest substring)
+Note:
+You can assume that the input string is not null
+
+
+PROGRAMM:
+
+MODEL1:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "abc, de, fg,h";
+        String[] arr = s.split(","); 
+
+        int maxLength = 0;
+
+        for (String str : arr) {
+            if (str.length() > maxLength) { 
+                maxLength = str.length(); 
+            }
+        }
+
+        System.out.println(maxLength);
+    }
+}
+
+MODEL2:
+
+class A{
+    public static int hi(String s){
+        int count=0;
+        int highestsubstring=0;
+        for(int i=0;i<s.length();i++){
+            count++;
+            if(s.charAt(i)==','){
+                count=0;
+            }
+            else if(highestsubstring<count){
+                highestsubstring=count;
+            }
+        }
+        return highestsubstring;
+    }
+    public static void main(String...args){
+        String s="abc,asgggg,a";
+        System.out.println(hi(s));
+    }
+}
+    
+                
