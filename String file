@@ -6,3 +6,35 @@ OUTPUT:
 Return an integer value.
 
 PROGRAMM:
+public class Main {
+    public static int latestVersion(String[] S, int n) {
+        int maxVersion = -1;
+        for (String file : S) {
+            String[] parts = file.split("_");
+            if (parts.length == 2 && parts[0].equals("File") && isDigit(parts[1])) {
+                int version = Integer.parseInt(parts[1]);
+                maxVersion = Math.max(maxVersion, version);
+            }
+        }
+        return maxVersion;
+    }
+
+    public static boolean isDigit(String s) {
+        for (char c : s.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String[] S = {"File_1", "File_2", "File_3", "abc_1", "File_4"};
+        int n = S.length;
+        System.out.println(latestVersion(S, n));  // Output: 4
+
+        String[] S2 = {"abc_1", "def_2", "ghi_3"};
+        int n2 = S2.length;
+        System.out.println(latestVersion(S2, n2));  // Output: -1
+    }
+}
