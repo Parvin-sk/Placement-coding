@@ -1,0 +1,27 @@
+Write a Java program to count the occurrences of non-space characters in a given string. The program should:
+Take a string input from the user.
+Count the number of non-space characters (letters, digits, special characters, etc.) in the input string.
+Print the total count of non-space characters.
+Example Input/Output:
+Input: "Hello World!"
+Output: 11 (because there are 11 non-space characters in the input string)
+
+PROGRAMM:
+
+import java.util.*;
+class Hello{
+    public static int countoccurence(String s){
+        int count=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)!=' '){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static void main(String...args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.println(countoccurence(s));
+    }
+}
