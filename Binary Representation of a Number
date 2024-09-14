@@ -1,0 +1,23 @@
+Write a Java program that takes an integer as input from the user and prints its binary representation.
+Input:
+A single integer n (e.g., 12, 25, 36, etc.)
+Output:
+The binary representation of the input integer n (e.g., 1100, 11001, 100100, etc.)
+Example:
+Input: 12
+Output: 1100
+Constraints:
+The input integer n will be a non-negative integer.
+The program should handle large integers (up to 2^31 - 1).
+
+PROGRAMM:
+
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(Integer.toBinaryString(n));
+    }
+}
