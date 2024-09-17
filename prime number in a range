@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Hello {
+    public static void main(String... args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (a >= 0 && b >= 0 && a <= b) {
+            for (int i = a; i <= b; i++) {
+                if (checkPrime(i)) {
+                    System.out.print(i + " ");
+                }
+            }
+        }
+    }
+
+    public static boolean checkPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
