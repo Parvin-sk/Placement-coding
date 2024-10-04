@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Hello {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        
+        // Input validation
+        if (number <= 0) {
+            System.out.println("false");
+            sc.close();
+            return;
+        }
+        
+        int divisorSum = 0;
+        for (int i = 1; i <= number / 2; i++) {
+            if (number % i == 0) {
+                divisorSum += i;
+            }
+        }
+        
+        System.out.println(number == divisorSum);
+        
+        // Close Scanner
+        sc.close();
+    }
+}
